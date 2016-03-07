@@ -35,4 +35,4 @@ From [Evan's Paper](http://elm-lang.org/papers/concurrent-frp.pdf):
     allowed everywhere, including in signals. Signal types are dangerous types that are
     allowed everywhere except in signals.
 
-So, in a way, concatMapping signals does help you getting rid of signals of signals, but it create dynamic signals on the fly in order to do that.
+So, in a way, concatMapping signals does help you getting rid of signals of signals, but it creates dynamic signals on the fly in order to do that.
