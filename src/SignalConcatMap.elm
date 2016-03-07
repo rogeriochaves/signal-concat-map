@@ -1,10 +1,10 @@
 module SignalConcatMap
-  (concatMap) where
+  (concatMap, (>>=), (=<<)) where
 
 {-| ConcatMap for Elm Signals
 
 # Tests
-@docs concatMap
+@docs concatMap, (>>=), (=<<)
 
 -}
 
