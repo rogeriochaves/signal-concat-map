@@ -1,7 +1,7 @@
 ConcatMap for Elm Signals
 =========================
 
-The concatMap function means to map a function over a list and concatenate the results, like this:
+The concatMap function maps a function over a list and concatenate the results, like this:
 
 ```elm
 List.concatMap (List.repeat 3) [1,2,3] == [1,1,1,2,2,2,3,3,3]
@@ -10,23 +10,11 @@ List.concatMap (List.repeat 3) [1,2,3] == [1,1,1,2,2,2,3,3,3]
 With this library, you can `concatMap` Signals too:
 
 ```elm
-evenSignal : Signal String
-evenSignal = Signal.constant "even"
-
-oddSignal : Signal String
-oddSignal = Signal.constant "odd"
-
-timelyEvenOddSignal : Signal String
-timelyEvenOddSignal =
-  (every <| 1 * second)
-    |> map (round << (/) second)
-    |> concatMap (\x -> if x % 2 == 0 then evenSignal else oddSignal)
+Signal.constant "hello"
+  |> concatMap (\x -> Signal.constant <| x ++ " world")
 ```
 
-This example creates a time signal using the `every` function, which returns the current time milliseconds in each interaction.
-Then it maps the milliseconds to seconds again. Then if the current second is an even number, `concatMap` it to the evenSignal, else with the oddSignal.
-
-Basically this will return "even" or "odd" every second.
+This returns a constant signal with "hello world".
 
 ### Do not use this
 

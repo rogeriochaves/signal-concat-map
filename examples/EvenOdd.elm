@@ -1,4 +1,4 @@
-module Main where
+module EvenOdd where
 
 import Graphics.Element exposing (Element, show)
 import Time exposing (every, second)
